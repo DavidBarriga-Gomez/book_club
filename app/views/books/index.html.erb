@@ -1,0 +1,10 @@
+<h1>All Books</h1>
+
+<% @books.each do |book| %>
+  <section id = "book-<%= book.id %>">
+    <%= book.title %>
+    <%= book.pages %>
+    <%= book.publication_year %>
+    <%= link_to book.authors.last.name, "/authors/#{book.authors.last.id}", method: :get %>
+  </section>
+<% end %>
